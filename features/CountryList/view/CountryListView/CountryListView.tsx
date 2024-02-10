@@ -1,7 +1,7 @@
 import { RequestParams } from 'shared/types/RequestParams';
 import { getCountryData } from '../../store/countryListStore';
 import styles from './CountryListView.module.scss';
-import { Country, Heart, Preloader } from 'shared';
+import { ClosedEye, Country, Heart, OpenEye, Preloader } from 'shared';
 
 import { setCountryName, toggleCountryFavourite } from 'services/CountryState';
 import { FormEvent } from 'react';
@@ -22,7 +22,7 @@ export const CountryListView = () => {
         urlParams: countryState.name === '' ? '/all' : `/name/${countryState.name}`
     }
 
-    const { data: countrys, error, isLoading } = getCountryData(reqParams);
+    const { data: countrys, error, isLoading } = getCountryData(reqParams, countryState.selectedSorting);
 
     const countryNameChangeHandler = (evt: FormEvent<HTMLInputElement>) => {
         dispatch(setCountryName(evt.currentTarget.value));
@@ -52,20 +52,31 @@ export const CountryListView = () => {
                     <div className={styles.countriesWrapper}>
                         {countrys?.map(obj => <div key={obj.name.common} className={styles.countriesContainer}>
                             <div className={styles.countryWrapper}>
-                                <div className={styles.favouritesWrapper}>
+                                <div className={styles.actionsWrapper}>
                                     <div className={styles.favouritesContainer} onClick={onClickHerta(obj)}>
                                         <Heart
-                                            fill={countryState.countries.some(country => country.name.official === obj.name.official)
-                                                ? '#ff6699'
-                                                : 'none'
+                                            fill={
+                                                countryState.countries.some(country => country.name.official === obj.name.official)
+                                                    ? '#ff6699'
+                                                    : 'none'
                                             }
                                             stroke={"#ff6699"}
                                             size={.7}
                                         />
                                     </div>
+                                    <div>
+                                        {
+                                            countryState.countriesViewed.some(country => country.name.official === obj.name.official)
+                                                ? <OpenEye />
+                                                : <ClosedEye />
+                                        }
+                                    </div>
                                 </div>
                                 <div className={styles.linkWrapper}>
                                     <Link href={`/country/${obj.cioc ? obj.cioc : obj.ccn3}`}>{obj.name.common}</Link>
+                                </div>
+                                <div className={styles.areaWrapper}>
+                                    <span>Площадь: {obj.area}</span>
                                 </div>
                             </div>
                         </div>)}

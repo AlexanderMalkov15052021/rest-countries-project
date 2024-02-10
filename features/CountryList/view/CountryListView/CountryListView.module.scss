@@ -101,14 +101,17 @@
     justify-content: center;
 }
 
-.favouritesWrapper {
+.actionsWrapper {
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
-.favouritesWrapper svg {
+
+.favouritesContainer svg {
     cursor: pointer;
 }
 
 .favouritesContainer {
     width: fit-content;
-    margin: 0 auto;
+    // margin: 0 auto;
 }

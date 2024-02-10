@@ -26,8 +26,6 @@ export const FavouriteCountryListView = () => {
                 <h1>Избранные страны</h1>
             </div>
             <div className={styles.mainContainer}>
-
-
                 <div className={styles.countries}>
                     <div className={styles.countriesWrapper}>
                         {countries?.map((obj: Country) => <div key={obj.name.common} className={styles.countriesContainer}>
@@ -51,8 +49,6 @@ export const FavouriteCountryListView = () => {
                         </div>)}
                     </div>
                 </div>
-
-
             </div>
         </>
     )

@@ -3,14 +3,17 @@ import styles from './HeaderView.module.scss';
 import { toggleUITheme } from 'services/UIService';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
-import { Heart, Moon, Sun } from 'shared';
+import { ArrowDownSquar, ArrowUpSquar, CrossSquare, Heart, Moon, Sun } from 'shared';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useRef } from 'react';
 import Link from 'next/link';
+import { setSelectedSorting } from 'services/CountryState';
 
 export const HeaderView = () => {
 
     const theme = useSelector((state: RootState) => state.UIState.theme);
+
+    const sorting = useSelector((state: RootState) => state.countryState.selectedSorting);
 
     const dispatch = useDispatch();
 
@@ -18,7 +21,31 @@ export const HeaderView = () => {
         dispatch(toggleUITheme());
     }
 
+    const onChangeSort = () => {
+        switch (sorting) {
+            case 'increase':
+                dispatch(setSelectedSorting('decrease'));
+                break;
+            case 'decrease':
+                dispatch(setSelectedSorting('default'));
+                break;
+            default:
+                dispatch(setSelectedSorting('increase'));
+        }
+    }
+
     const nodeRef = useRef<HTMLDivElement>(null);
+
+    const getSortIcon = () => {
+        switch (sorting) {
+            case 'increase':
+                return <ArrowDownSquar />
+            case 'decrease':
+                return <ArrowUpSquar />
+            default:
+                return <CrossSquare />
+        }
+    }
 
     return (
         <div className={styles.mainContainer}>
@@ -51,6 +78,14 @@ export const HeaderView = () => {
                 <Link href={`/favourites`}>
                     <Heart fill={"#ff6699"} stroke={"#ff6699"} />
                 </Link>
+            </div>
+
+            <div className={styles.sortingContainer}>
+                <div onClick={onChangeSort}>
+                    {
+                        getSortIcon()
+                    }
+                </div>
             </div>
 
         </div>

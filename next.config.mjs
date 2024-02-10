@@ -15,6 +15,9 @@ const nextConfig = {
             {
                 hostname: 'upload.wikimedia.org',
             },
+            {
+                hostname: 'www.openstreetmap.org',
+            },
         ],
     },
     // output: 'export'
