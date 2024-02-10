@@ -5,6 +5,7 @@ import { persistor, store } from './store';
 import { ReactNode } from 'react';
 
 import { PersistGate } from 'redux-persist/integration/react';
+import { ThemeProvider } from 'shared/view/providers/ThemeProvider/ThemeProvider';
 
 type Props = {
   children: ReactNode
@@ -14,7 +15,9 @@ export function Providers({ children }: Props) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </PersistGate>
     </Provider >
   )

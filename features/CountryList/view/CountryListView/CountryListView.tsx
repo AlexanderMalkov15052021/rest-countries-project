@@ -8,6 +8,8 @@ import { FormEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 import { useDispatch } from 'react-redux';
+import { toggleUITheme } from 'services/UIService';
+import Link from 'next/link';
 
 
 export const CountryListView = () => {
@@ -24,7 +26,6 @@ export const CountryListView = () => {
 
     const countryNameChangeHandler = (evt: FormEvent<HTMLInputElement>) => {
         dispatch(setCountryName(evt.currentTarget.value));
-        console.log(evt.currentTarget.value);
     }
 
     return (
@@ -44,7 +45,7 @@ export const CountryListView = () => {
                 : <div className={styles.countries}>
                     {countrys?.map(obj => <div key={obj.name.common} className={styles.countriesContainer}>
                         <div className={styles.countryWrapper}>
-                            <a href={`/country/${obj.cioc ? obj.cioc : obj.ccn3}`}>{obj.name.common}</a>
+                            <Link href={`/country/${obj.cioc ? obj.cioc : obj.ccn3}`}>{obj.name.common}</Link>
                         </div>
                     </div>)}
                 </div>

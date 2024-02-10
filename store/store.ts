@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { countryAPI } from "services/CountryService";
 import countryStateSlice from 'services/CountryState'
+import UIStateSlice from 'services/UIService';
 
 import {
     persistStore,
@@ -25,7 +26,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     [countryAPI.reducerPath]: countryAPI.reducer,
-    countryState: countryStateSlice
+    countryState: countryStateSlice,
+    UIState: UIStateSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

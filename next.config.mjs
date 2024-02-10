@@ -10,10 +10,10 @@ const nextConfig = {
                 // pathname: '/account123/**',
             },
             {
-                // protocol: 'https',
-                hostname: 'mainfacts.com',  // mainfacts.com
-                // port: '3000',
-                // pathname: '/account123/**',
+                hostname: 'mainfacts.com',
+            },
+            {
+                hostname: 'upload.wikimedia.org',
             },
         ],
     },

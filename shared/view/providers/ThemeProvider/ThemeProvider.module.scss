@@ -1,0 +1,13 @@
+.lightTheme {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(245, 245, 235);
+  transition: .3s;
+}
+
+.darkTheme {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(220, 220, 210);
+  transition: .3s;
+}
