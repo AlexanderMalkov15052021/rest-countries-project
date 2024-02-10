@@ -20,10 +20,10 @@ export const CurrentCountryView: FC<CountryCode> = ({ code }: CountryCode) => {
         <>
             <div>
                 <nav className={styles.navBar}>
-                    <Link href={'/'}>Back to the countries</Link>
+                    <Link href={'/'}>Вернуться к выбору страны</Link>
                 </nav>
             </div>
-            <div>
+            <div className={styles.mainContainer}>
                 {error ? <div className={styles.errorMessage}>Ощибка загрузки данных!</div> : ''}
                 {isLoading ? <Preloader size={.3} /> : data?.map(country => {
                     return <div key={country.cioc ? country.cioc : country.ccn3}>

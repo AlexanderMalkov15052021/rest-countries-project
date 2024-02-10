@@ -13,6 +13,10 @@
     border-radius: 8px;
 }
 
+.mainContainer {
+    padding: 30px;
+}
+
 
 .errorMessage {
     width: 100vw;
@@ -32,6 +36,7 @@
     position: relative;
     z-index: 1;
     margin-top: 30px;
+    padding-left: 30px;
 }
 
 .navBar a {

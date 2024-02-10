@@ -1,28 +1,28 @@
+import { Country } from 'shared';
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface CountryState {
-    name: string
+    name: string,
+    countries: Country[],
 }
 
-const initialState = { name: '' } as CountryState
+const initialState = { name: '', countries: [] } as CountryState
 
 const CountryStateSlice = createSlice({
     name: 'countryState',
     initialState,
     reducers: {
-        // CountryIndexIncrement(state) {
-        //     state.index++;
-        //     console.log(123);
-        // },
-        // CountryIndexDecrement(state) {
-        //     state.index--;
-        // },
         setCountryName(state, action: PayloadAction<string>) {
             state.name = action.payload;
+        },
+        toggleCountryFavourite(state, action: PayloadAction<Country>) {
+            state.countries.some(country => country.name.official === action.payload.name.official)
+                ? (state.countries = state.countries.filter(obj => obj.name.official !== action.payload.name.official))
+                : state.countries.push(action.payload)
         },
     },
 })
 
-export const { setCountryName } = CountryStateSlice.actions
+export const { setCountryName, toggleCountryFavourite } = CountryStateSlice.actions
 export default CountryStateSlice.reducer

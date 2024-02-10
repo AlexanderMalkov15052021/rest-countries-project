@@ -1,6 +1,7 @@
 .mainContainer {
     width: 100vw;
     padding: 30px 30px 0 30px;
+    display: flex;
 }
 
 .mainContainer button {
@@ -19,6 +20,15 @@
     width: fit-content;
     height: fit-content;
     position: relative;
+    cursor: pointer;
+}
+
+
+
+
+.favouritesContainer {
+    margin-left: 30px;
+    cursor: pointer;
 }
 
 

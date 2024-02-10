@@ -1,0 +1,98 @@
+.mainContainer {
+    padding: 30px;
+}
+
+.navBar {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.navBar a:hover {
+    color: rgb(80, 80, 80);
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countries {
+    margin-top: 30px;
+}
+
+.countriesContainer {
+    display: inline-block;
+}
+
+.countriesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.countriesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.favouritesWrapper {
+    text-align: center;
+}
+
+.favouritesWrapper svg {
+    cursor: pointer;
+}
+
+.favouritesContainer {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.countryWrapper a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.countryWrapper a:hover {
+    color: rgb(80, 80, 80);
+}
+
+.countryWrapper {
+    width: 400px;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background-color: rgb(247, 251, 255);
+    transition: .3s;
+    text-align: center;
+}
+
+.countryWrapper a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.countryWrapper a:hover {
+    color: rgb(80, 80, 80);
+}
+
+.countryWrapper:hover {
+    background-color: rgb(227, 242, 255);
+}
