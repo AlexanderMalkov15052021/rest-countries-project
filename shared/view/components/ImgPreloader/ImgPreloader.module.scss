@@ -1,0 +1,22 @@
+.svg {
+    animation-duration: 3s;
+    animation-name: rotAnim;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.ImgPreloaderWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+@keyframes rotAnim {
+    from {
+        transform: rotateZ(30);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}

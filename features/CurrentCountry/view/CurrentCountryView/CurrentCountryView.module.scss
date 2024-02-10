@@ -1,0 +1,49 @@
+.flagContainer,
+.coatOfArms {
+    width: auto;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.flagContainer img,
+.coatOfArms img {
+    border-radius: 8px;
+}
+
+
+.errorMessage {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #ff6699;
+}
+
+.navBar {
+    position: relative;
+    z-index: 1;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.navBar a:hover {
+    color: rgb(80, 80, 80);
+}
+
+.population {
+    font-size: 22px;
+    font-weight: bold;
+}
