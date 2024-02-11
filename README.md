@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# rest-countries-project
+Interaction with the rest countries api and additional features
 
-## Getting Started
 
-First, run the development server:
+Стандартная инструкция для запуска
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Можно воспользоваться графическими интерфейсами в прикладных программах как Sourcetree или GitHub Desktop, если так удобнее, я расскажу как всё сделать через консоль.
+Для работы в консоле понадобиться GIT и Node.js на машине, где производиться запуск:)
+На примере npm если yarn или pnpm там примерно так же.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Инструкция
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Открываем консоль, переходим в нужную дирректорию и пишем: git clone https://github.com/AlexanderMalkov15052021/rest-countries-project
+Переходим в каталог, который клонировался, пишем: npm i
+Затем: npm run build или npm run dev
+Если buld то ещё npm start
+Переходим: http://localhost:3000 порт можно поменять в package.json
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+План “B”
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Если не получилось, переходим: https://rest-countries-project-ly1m.vercel.app
