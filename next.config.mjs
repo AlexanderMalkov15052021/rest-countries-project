@@ -16,6 +16,7 @@ const withPWA = withPWAInit({
 
 export default withPWA({
     reactStrictMode: false,
+    productionBrowserSourceMaps: true,
     images: {
         remotePatterns: [
             {

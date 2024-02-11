@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "npm run build && source-map-explorer .next/static/source-map/source-map.js",
     "start": "next start",
     "lint": "next lint",
     "server": "npx json-server -w db.json --port 5000"
