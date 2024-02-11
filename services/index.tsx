@@ -1,0 +1,1 @@
+export { PageSwitchTransition } from './providers/PageSwitchTransition';

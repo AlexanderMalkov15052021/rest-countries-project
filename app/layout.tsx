@@ -5,6 +5,7 @@ import { Providers } from "store/provider";
 
 import styles from './layout.module.scss';
 import { MainHeader } from "modules";
+import { PageSwitchTransition } from "services";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,9 @@ export default function RootLayout({
             <MainHeader />
           </div>
           <div className={styles.mainContainer}>
-            {children}
+            <PageSwitchTransition>
+              {children}
+            </PageSwitchTransition>
           </div>
         </Providers>
       </body>
