@@ -5,7 +5,7 @@ import { persistor, store } from './store';
 import { ReactNode } from 'react';
 
 import { PersistGate } from 'redux-persist/integration/react';
-import { ThemeProvider } from 'shared/view/providers/ThemeProvider/ThemeProvider';
+import { ThemeProvider } from 'services';
 
 type Props = {
   children: ReactNode

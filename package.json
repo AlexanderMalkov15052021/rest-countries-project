@@ -10,12 +10,14 @@
     "server": "npx json-server -w db.json --port 5000"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.5",
     "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^2.1.0",
     "@types/react-redux": "^7.1.33",
     "framer-motion": "^11.0.3",
     "json-server": "^1.0.0-alpha.23",
     "next": "14.1.0",
+    "next-pwa": "^5.6.0",
     "react": "^18",
     "react-animated-numbers": "^0.18.0",
     "react-dom": "^18",

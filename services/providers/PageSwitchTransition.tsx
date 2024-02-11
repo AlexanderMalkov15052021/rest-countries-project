@@ -17,9 +17,9 @@ function FrozenRouter(props: { children: React.ReactNode }) {
 }
 
 const variants = {
-    hidden: { opacity: 0, x: -300, y: 0 },
+    hidden: { opacity: 0, x: 0, y: -300 },
     enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 300, y: 0 },
+    exit: { opacity: 0, x: 0, y: -300 },
 };
 
 export const PageSwitchTransition = ({ children }: { children: React.ReactNode }) => {

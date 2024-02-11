@@ -1,13 +1,25 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+import withPWAInit from "@ducanh2912/next-pwa";
+
+const withPWA = withPWAInit({
+    dest: "public",
+    cacheOnFrontEndNav: true,
+    aggressiveFrontEndNavCaching: true,
+    reloadOnOnline: true,
+    swcMinify: true,
+    disable: false,
+    workboxOptions: {
+        disableDevLogs: true,
+    }
+});
+
+export default withPWA({
     reactStrictMode: false,
     images: {
         remotePatterns: [
             {
-                // protocol: 'https',
-                hostname: 'flagcdn.com',  // mainfacts.com
-                // port: '3000',
-                // pathname: '/account123/**',
+                hostname: 'flagcdn.com',
             },
             {
                 hostname: 'mainfacts.com',
@@ -20,7 +32,4 @@ const nextConfig = {
             },
         ],
     },
-    // output: 'export'
-};
-
-export default nextConfig;
+});
