@@ -7,9 +7,10 @@ interface CountryState {
     countries: Country[],
     countriesViewed: Country[],
     selectedSorting: 'increase' | 'decrease' | 'default',
+    countryComparison: Country[],
 }
 
-const initialState = { name: '', countries: [], countriesViewed: [], selectedSorting: 'default' } as CountryState
+const initialState = { name: '', countries: [], countriesViewed: [], selectedSorting: 'default', countryComparison: [] } as CountryState
 
 const CountryStateSlice = createSlice({
     name: 'countryState',
@@ -17,6 +18,13 @@ const CountryStateSlice = createSlice({
     reducers: {
         setCountryName(state, action: PayloadAction<string>) {
             state.name = action.payload;
+        },
+        setCountriesCompare(state, action: PayloadAction<Country>) {
+
+            state.countryComparison.some(country => country.name.official === action.payload.name.official)
+                ? (state.countryComparison = state.countryComparison.filter(obj => obj.name.official !== action.payload.name.official))
+                : state.countryComparison.length < 2 && state.countryComparison.push(action.payload)
+
         },
         setSelectedSorting(state, action: PayloadAction<'increase' | 'decrease' | 'default'>) {
             state.selectedSorting = action.payload;
@@ -33,5 +41,12 @@ const CountryStateSlice = createSlice({
     },
 })
 
-export const { setCountryName, toggleCountryFavourite, setViewedCountry, setSelectedSorting } = CountryStateSlice.actions
+export const {
+    setCountryName,
+    toggleCountryFavourite,
+    setViewedCountry,
+    setSelectedSorting,
+    setCountriesCompare
+} = CountryStateSlice.actions;
+
 export default CountryStateSlice.reducer

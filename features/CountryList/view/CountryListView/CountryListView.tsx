@@ -1,14 +1,13 @@
 import { RequestParams } from 'shared/types/RequestParams';
 import { getCountryData } from '../../store/countryListStore';
 import styles from './CountryListView.module.scss';
-import { ClosedEye, Country, Heart, OpenEye, Preloader } from 'shared';
+import { ClosedEye, Compare, Country, Heart, OpenEye, Preloader } from 'shared';
 
-import { setCountryName, toggleCountryFavourite } from 'services/CountryState';
+import { setCountriesCompare, setCountryName, toggleCountryFavourite } from 'services/CountryState';
 import { FormEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 import { useDispatch } from 'react-redux';
-import { toggleUITheme } from 'services/UIService';
 import Link from 'next/link';
 
 
@@ -30,6 +29,30 @@ export const CountryListView = () => {
 
     const onClickHerta = (country: Country) => () => {
         dispatch(toggleCountryFavourite(country));
+    }
+
+    const onClickCompare = (country: Country) => () => {
+        dispatch(setCountriesCompare(country));
+    }
+
+    const getCompareBtnColor = (obj: Country) => {
+
+        switch (countryState.countryComparison?.length) {
+
+            case countryState.countryComparison?.some(country => country.name.official === obj.name.official)
+                ? countryState.countryComparison?.length
+                : 3:
+                return '#f5ce42';
+
+            case countryState.countryComparison?.length === 2
+                ? countryState.countryComparison?.length
+                : 3:
+                return '#c0c0c0';
+
+            default:
+                return '#ff6699';
+
+        }
     }
 
     return (
@@ -70,6 +93,11 @@ export const CountryListView = () => {
                                                 ? <OpenEye />
                                                 : <ClosedEye />
                                         }
+                                    </div>
+                                    <div className={styles.compareWrapper}>
+                                        <div onClick={onClickCompare(obj)} className={styles.compareContainer}>
+                                            <Compare color={getCompareBtnColor(obj)} size={.7} />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.linkWrapper}>

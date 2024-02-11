@@ -8,6 +8,7 @@ export { ClosedEye } from './view/components/UI/Eyes/ClosedEye/ClosedEye';
 export { ArrowDownSquar } from './view/components/Arrows/ArrowDownSquar/ArrowDownSquar';
 export { ArrowUpSquar } from './view/components/Arrows/ArrowUpSquar/ArrowUpSquar';
 export { CrossSquare } from './view/components/Arrows/CrossSquare/CrossSquare';
+export { Compare } from './view/components/UI/Compare/Compare';
 
 export { getSortedArr } from './helpers/get/getSortedArr';
 

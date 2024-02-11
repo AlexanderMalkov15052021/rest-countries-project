@@ -82,12 +82,14 @@
 
 .countryWrapper a {
     text-decoration: none;
-    color: black;
+    color: rgb(80, 80, 80);
+    text-shadow: 0 0 .9em #aa00aa; // f5ce42
     font-size: 18px;
+    transition: .3s;
 }
 
 .countryWrapper a:hover {
-    color: rgb(80, 80, 80);
+    color: #ff6699;
 }
 
 .countryWrapper:hover {
@@ -114,4 +116,12 @@
 .favouritesContainer {
     width: fit-content;
     // margin: 0 auto;
+}
+
+.compareWrapper svg {
+    cursor: pointer;
+}
+
+.compareContainer {
+    width: fit-content;
 }

@@ -1,0 +1,144 @@
+.mainContainer {
+    padding: 30px;
+}
+
+.navBar {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+.navBar a,
+.countriesLength a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.countriesLength a {
+    text-decoration: underline;
+}
+
+.navBar a:hover,
+.countriesLength a:hover {
+    color: rgb(80, 80, 80);
+}
+
+.mainWrapper {
+    flex-direction: column;
+}
+
+.mainWrapper,
+.flagsWrapper,
+.mamesWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.flag {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    background-color: rgb(213, 242, 255);
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid rgb(140, 140, 140);
+}
+
+.flagsWrapper,
+.mamesWrapper {
+    gap: 10px;
+}
+
+.flagsContainer {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.vs {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+}
+
+
+
+// table ▼
+
+.mainWrapper table {
+    width: 80vw;
+    max-width: 1500px;
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.mainWrapper caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.mainWrapper thead,
+.mainWrapper tfoot {
+    background-color: rgb(228 240 245);
+}
+
+.mainWrapper th,
+.mainWrapper td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+// .mainWrapper td:last-of-type {
+.mainWrapper td {
+    text-align: center;
+}
+
+.mainWrapper tbody>tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+}
+
+.mainWrapper tfoot th {
+    text-align: right;
+}
+
+.mainWrapper tfoot td {
+    font-weight: bold;
+}
+
+.params {
+    text-align: left;
+}
+
+// table ▲
+
+
+
+
+
+@media (max-width: 800px) {
+    .mainContainer {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .mainWrapper table {
+        font-size: 14px;
+    }
+
+    .mainWrapper th,
+    .mainWrapper td {
+        padding: 8px 5px;
+    }
+}

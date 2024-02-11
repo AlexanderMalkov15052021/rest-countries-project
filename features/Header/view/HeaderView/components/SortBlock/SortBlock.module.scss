@@ -1,0 +1,35 @@
+.mainContainer {
+    width: 100%;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.sortWrapper {
+    width: fit-content;
+    position: relative;
+}
+
+.enter {
+    opacity: .1;
+    scale: .9;
+}
+
+.enterActive {
+    opacity: 1;
+    scale: 1;
+}
+
+.exit {
+    opacity: 1;
+    scale: 1;
+}
+
+.exitActive {
+    opacity: .1;
+    scale: .9;
+}
+
+.exitActive,
+.enterActive {
+    transition: opacity .3s, scale .3s, transform .3s;
+}

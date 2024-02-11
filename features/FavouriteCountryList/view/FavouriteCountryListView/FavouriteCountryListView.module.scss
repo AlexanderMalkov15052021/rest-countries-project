@@ -85,12 +85,14 @@
 
 .countryWrapper a {
     text-decoration: none;
-    color: black;
+    color: rgb(80, 80, 80);
     font-size: 18px;
+    text-shadow: 0 0 .9em #aa00aa;
+    transition: .3s;
 }
 
 .countryWrapper a:hover {
-    color: rgb(80, 80, 80);
+    color: #ff6699;
 }
 
 .countryWrapper:hover {

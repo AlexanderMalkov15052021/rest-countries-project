@@ -26,8 +26,13 @@
 
 
 
-.favouritesContainer {
+.favouritesContainer svg {
     margin-left: 30px;
+    cursor: pointer;
+}
+
+.compareContainer svg {
+    margin-left: 20px;
     cursor: pointer;
 }
 
